@@ -17,6 +17,9 @@ sed -i '/boot()/,+2d' feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
 # nlbwmon - disable syslog
 sed -i 's/stderr 1/stderr 0/g' feeds/packages/net/nlbwmon/files/nlbwmon.init
 
+#openclash
+git clone --depth=1 -b dev https://github.com/vernesong/OpenClash package/new/OpenClash
+
 # boost - 1.84.0
 rm -rf feeds/packages/libs/boost
 cp -a ../master/packages/libs/boost feeds/packages/libs/boost
