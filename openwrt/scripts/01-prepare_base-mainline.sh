@@ -25,7 +25,7 @@ git clone https://nanopi:nanopi@$gitea/sbwml/brcmfmac-firmware-4366c-pcie packag
 git clone https://nanopi:nanopi@$gitea/sbwml/brcmfmac-firmware-4366b-pcie package/firmware/brcmfmac-firmware-4366b-pcie
 
 # kernel - 6.x
-curl -s https://$mirror/tags/kernel-6.6 > include/kernel-6.6
+curl -s https://raw.githubusercontent.com/sbwml/r4s_build_script/master/tags/kernel-6.6 > include/kernel-6.6
 
 # kenrel Vermagic
 sed -ie 's/^\(.\).*vermagic$/\1cp $(TOPDIR)\/.vermagic $(LINUX_DIR)\/.vermagic/' include/kernel-defaults.mk
