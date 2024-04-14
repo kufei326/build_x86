@@ -121,7 +121,7 @@ export ENABLE_LRNG=$ENABLE_LRNG
 echo -e "\r\n${GREEN_COLOR}Building $branch${RES}\r\n"
 if [ "$platform" = "x86_64" ]; then
     echo -e "${GREEN_COLOR}Model: x86_64${RES}"
-    curl -s https://$mirror/tags/kernel-6.6 > kernel.txt
+    curl -s https://raw.githubusercontent.com/sbwml/r4s_build_script/master/tags/kernel-6.6 > kernel.txt
     kmod_hash=$(grep HASH kernel.txt | awk -F'HASH-' '{print $2}' | awk '{print $1}' | md5sum | awk '{print $1}')
     kmodpkg_name=$(echo $(grep HASH kernel.txt | awk -F'HASH-' '{print $2}' | awk '{print $1}')-1-$(echo $kmod_hash))
     echo -e "${GREEN_COLOR}Kernel: $kmodpkg_name ${RES}"
