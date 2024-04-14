@@ -9,7 +9,7 @@ rm -rf feeds/packages/lang/node
 git clone https://$github/sbwml/feeds_packages_lang_node-prebuilt feeds/packages/lang/node
 
 # Default settings
-git clone https://$github/sbwml/default-settings package/new/default-settings
+git clone https://$github/kufei326/default-settings package/new/default-settings
 
 # DDNS
 sed -i '/boot()/,+2d' feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
