@@ -165,11 +165,11 @@ fi
 [ -n "$LAN" ] && echo -e "${GREEN_COLOR}LAN IP: $LAN${RES}\r\n" || echo -e "${GREEN_COLOR}LAN IP: 10.0.0.1${RES}\r\n"
 
 # clean old files
-rm -rf openwrt master && mkdir master
+rm -rf master && mkdir master
 
 # openwrt - releases
 [ "$(whoami)" = "runner" ] && group "source code"
-git clone --depth=1 https://$github/openwrt/openwrt -b $branch
+#git clone --depth=1 https://$github/openwrt/openwrt -b $branch
 
 # openwrt master
 git clone https://$github/openwrt/openwrt master/openwrt --depth=1
