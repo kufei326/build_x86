@@ -114,7 +114,7 @@ jobs:
       continue-on-error: true
       working-directory: /builder
       run: |
-        BUILD_FAST=y ENABLE_OTA=y ENABLE_BPF=y ENABLE_LTO=y ENABLE_LRNG=y USE_GCC14=y USE_MOLD=y bash <(curl -sS https://raw.githubusercontent.com/${{ github.repository }}/master/openwrt/build.sh) ${{ matrix.tag.type }} ${{ matrix.model }}
+        LAN=192.168.5.2 BUILD_FAST=y ENABLE_OTA=y ENABLE_BPF=y ENABLE_LTO=y ENABLE_LRNG=y USE_GCC14=y USE_MOLD=y bash <(curl -sS https://raw.githubusercontent.com/${{ github.repository }}/master/openwrt/build.sh) ${{ matrix.tag.type }} ${{ matrix.model }}
         echo "latest_release=v$(curl -s https://raw.githubusercontent.com/${{ github.repository }}/master/tags/v23)" >>$GITHUB_ENV
 
     - name: Extensive logs after a failed compilation
